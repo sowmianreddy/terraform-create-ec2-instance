@@ -1,11 +1,11 @@
-resource "aws_instance" "CD-demo" {
+resource "aws_instance" "CI-demo" {
     ami = var.CENTOS_AMI_ID
     instance_type = "t2.micro"
     subnet_id = var.SUBNETID
     vpc_security_group_ids = [aws_security_group.centos-sg.id]
     key_name = aws_key_pair.centosKeyPair.key_name
     tags = {
-        Name = "CD-Demo"
+        Name = "CI-demo",
         OS = "Centos"
     }
 

@@ -15,10 +15,40 @@ resource "aws_security_group_rule" "CentosNodeAllowSSH" {
     to_port = 22
     protocol = "tcp"
     cidr_blocks = ["0.0.0.0/0"]
+
+    security_group_id = aws_security_group.centos-sg.id
+}
+
+resource "aws_security_group_rule" "CentosNodeAllowTCPjen" {
+
+    type = "ingress"
+    from_port = 8080
+    to_port = 8080
+    protocol = "tcp"
+    cidr_blocks = ["0.0.0.0/0"]
     security_group_id = aws_security_group.centos-sg.id
 }
 
 
+resource "aws_security_group_rule" "CentosNodeAllowTCPsonar" {
+
+    type = "ingress"
+    from_port = 9000
+    to_port = 9000
+    protocol = "tcp"
+    cidr_blocks = ["0.0.0.0/0"]
+    security_group_id = aws_security_group.centos-sg.id
+}
+
+resource "aws_security_group_rule" "CentosNodeAllowTCPnexus" {
+
+    type = "ingress"
+    from_port = 8081
+    to_port = 8081
+    protocol = "tcp"
+    cidr_blocks = ["0.0.0.0/0"]
+    security_group_id = aws_security_group.centos-sg.id
+}
 
 resource "aws_security_group_rule" "CentosOutboundtoAll" {
     type = "egress"
