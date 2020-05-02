@@ -61,3 +61,12 @@ variable "WINDOWS_PRIV_KEY" {
 variable "WINDOWS_PUB_KEY" {
    default =   "keys/windowsLaunchKey.pub"
 }
+
+variable "access_key"
+{
+  default = ""
+}
+
+
+
+
