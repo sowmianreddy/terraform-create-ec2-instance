@@ -21,12 +21,15 @@ variable "WINDOWS_AMI_ID" {
 
 variable "SUBNETID" {
   # default =   "subnet-588a5131"
-   default = "subnet-35678f6f"
+  # default = "subnet-35678f6f"
+default = "subnet-18af4142"
 }
 
 variable "VPCID" {
   # default =   "vpc-2000df49"
-   default = "vpc-e14ea387"
+  # default = "vpc-e14ea387"
+   default = "vpc-4abb582c"
+
 }
 
 variable "ACS_PRIV_KEY" {
@@ -62,11 +65,12 @@ variable "WINDOWS_PUB_KEY" {
    default =   "keys/windowsLaunchKey.pub"
 }
 
-variable "access_key"
-{
+variable "access_key" {
   default = ""
 }
 
-
+variable "secret_key" {
+ default = ""
+}
 
 
